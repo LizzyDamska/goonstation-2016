@@ -1,0 +1,61 @@
+"a" = (/turf/space,/area)
+"b" = (/turf/unsimulated/floor/engine,/area)
+"c" = (/turf/unsimulated/wall/auto,/area)
+"d" = (/turf/unsimulated/floor/redwhite/corner,/area)
+"e" = (/turf/unsimulated/floor/redwhite,/area)
+"f" = (/turf/unsimulated/floor/redwhite/corner{icon_state = "redwhitecorner"; dir = 4},/area)
+"g" = (/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 4},/area)
+"h" = (/obj/stool,/turf/unsimulated/floor/red/checker,/area)
+"i" = (/turf/unsimulated/floor/red/checker,/area)
+"j" = (/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 8},/area)
+"k" = (/obj/machinery/door/airlock/external,/turf/unsimulated/floor/grey/blackgrime,/area)
+"l" = (/obj/storage/closet,/turf/unsimulated/floor/grey/blackgrime,/area)
+"m" = (/turf/unsimulated/floor/grey/blackgrime,/area)
+"n" = (/turf/unsimulated/floor/redwhite/corner{icon_state = "redwhitecorner"; dir = 8},/area)
+"o" = (/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 1},/area)
+"p" = (/turf/unsimulated/floor/redwhite/corner{icon_state = "redwhitecorner"; dir = 1},/area)
+"q" = (/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 8},/area)
+"r" = (/turf/unsimulated/floor/griffening,/area)
+"s" = (/obj/storage/secure/closet/fridge/kitchen,/turf/unsimulated/floor/griffening,/area)
+"t" = (/obj/machinery/deep_fryer,/turf/unsimulated/floor/griffening,/area)
+"u" = (/obj/decal/sink,/turf/unsimulated/floor/griffening,/area)
+"v" = (/obj/decal/oven,/turf/unsimulated/floor/griffening,/area)
+"w" = (/obj/table/auto,/turf/unsimulated/floor/grime,/area)
+"x" = (/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 4},/area)
+"y" = (/turf/unsimulated/floor/white/grime,/area)
+"z" = (/obj/window/auto,/turf/unsimulated/floor/neutral,/area)
+"A" = (/turf/unsimulated/floor/grime,/area)
+"B" = (/obj/table/auto,/turf/unsimulated/floor/griffening,/area)
+"C" = (/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 10},/area)
+"D" = (/turf/unsimulated/floor/white/side,/area)
+"E" = (/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 6},/area)
+"F" = (/obj/table/auto,/turf/unsimulated/floor/white/grime,/area)
+"G" = (/obj/table/wood/auto,/turf/unsimulated/floor/red/checker,/area)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaa
+aabbbbbbbbbbbbbbbbbbbbaaa
+aabbbbbbbbbbbbbbbbbbbbaaa
+aabbbbbbbbbbbbbbbbbbbbaaa
+aabbbbbbbbbbbbbbbbbbbbaaa
+aabbbbbbbbbbbbbbbbbbbbaaa
+aabbbbbbbbbbbbbbbbbbbbaaa
+aabbbbbbbbbbbbbccckcccaaa
+aabbbbbbbbbbbbbclmmmlcaaa
+aabbbbbbbbbbbbbclmmmlcaaa
+aacccccccccccccccckcccaaa
+aacqrrstuvwxyyyyyyyyycaaa
+aazqwrrArrBxyyyyyyyyyzaaa
+aacqBBwBwBBxyyyyyyyyycaaa
+aazCDDDDDDDEyyyyyyyyyzaaa
+aacdeeeeeeefyyyyyyyyycaaa
+aazghhhihhhjccccFFFFyzaaa
+aacgGGGiGGGjcaacyyyyycaaa
+aazghhhihhhjcaacczzzccaaa
+aacgiiiiiiijcaaaaaaaaaaaa
+aacnooooooopcaaaaaaaaaaaa
+aacccccccccccaaaaaaaaaaaa
+"}

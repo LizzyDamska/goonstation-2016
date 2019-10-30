@@ -1,0 +1,40 @@
+"a" = (/turf/space,/area)
+"b" = (/turf/unsimulated/wall/other,/area)
+"c" = (/turf/unsimulated/floor/white,/area)
+"d" = (/turf/unsimulated/floor/redwhite/corner,/area)
+"e" = (/turf/unsimulated/floor/redwhite,/area)
+"f" = (/turf/unsimulated/floor/redwhite/corner{icon_state = "redwhitecorner"; dir = 4},/area)
+"g" = (/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 4},/area)
+"h" = (/obj/stool,/turf/unsimulated/floor/red/checker,/area)
+"i" = (/turf/unsimulated/floor/red/checker,/area)
+"j" = (/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 8},/area)
+"k" = (/obj/table/wood{icon_state = "4"},/turf/unsimulated/floor/red/checker,/area)
+"l" = (/obj/table/wood{icon_state = "12"},/turf/unsimulated/floor/red/checker,/area)
+"m" = (/obj/table/wood{icon_state = "8"},/turf/unsimulated/floor/red/checker,/area)
+"n" = (/turf/unsimulated/floor/redwhite/corner{icon_state = "redwhitecorner"; dir = 8},/area)
+"o" = (/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 1},/area)
+"p" = (/turf/unsimulated/floor/redwhite/corner{icon_state = "redwhitecorner"; dir = 1},/area)
+
+(3,5,1) = {"
+aaaaaaaaaaaaaa
+aaaaaaaaaaaaaa
+aaaaaaaaaaaaaa
+aaaaaaaaaaaaaa
+aaaaaaaaaaaaaa
+aaaaaaaaaaaaaa
+aaaaaaaaaaaaaa
+aaaaaaaaaaaaaa
+aaaaaaaaaaaaaa
+bbbbbbbbbbbbbb
+baaaaaaaaaaaab
+baaaaaaaaaaaab
+baaaaaaaaaaaab
+bccccccccccccb
+bdeeeeeeefcccb
+bghhhihhhjcccb
+bgklmiklmjcccb
+bghhhihhhjcccb
+bgiiiiiiijcccb
+bnooooooopcccb
+bbbbbbbbbbbbbb
+"}
