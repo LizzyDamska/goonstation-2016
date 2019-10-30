@@ -1991,3 +1991,11 @@ obj/decal/fakeobjects/teleport_pad
 	dropoff
 		name = "MULE cargo dropoff point"
 		icon_state = "mule_dropoff"
+
+/obj/decal/fakeobjects/pump
+	name = "fuel pump"
+	desc = "...wait, where exactly is this pump supposed to go?"
+	icon = 'icons/obj/32x64.dmi'
+	icon_state = "fuel pump"
+	density = 1
+	anchored = 1
