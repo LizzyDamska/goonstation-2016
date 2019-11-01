@@ -737,3 +737,49 @@
 		current_decomp_stage_s = decomp_stage
 		src.standImage = image('icons/mob/human.dmi', "[src.slot]_predator")
 		return standImage
+
+/obj/item/parts/human_parts/arm/left/rocket
+	name = "left rocket arm"
+	desc = "A high-tech prosthesis. It's even got a built-in lighter... but it's out of lighter fluid."
+	icon_state = "arm_left_rocket"
+	slot= "l_arm"
+	side = "left"
+	decomp_affected = 0
+	skintoned = 0
+	limb_type = /datum/limb/rocket
+	handlistPart = "l_hand_rocket"
+
+	New(var/atom/holder)
+		if (holder != null)
+			set_loc(holder)
+		..()
+
+	getMobIcon(var/lying, var/decomp_stage = 0)
+		if (src.standImage && ((src.decomp_affected && src.current_decomp_stage_s == decomp_stage) || !src.decomp_affected))
+			return src.standImage
+		current_decomp_stage_s = decomp_stage
+		src.standImage = image('icons/mob/human.dmi', "[src.slot]_rocket")
+		return standImage
+
+/obj/item/parts/human_parts/arm/right/rocket
+	name = "right rocket arm"
+	desc = "A high-tech prosthesis. It's even got a built-in lighter... but it's out of lighter fluid."
+	icon_state = "arm_right_rocket"
+	slot= "r_arm"
+	side = "right"
+	decomp_affected = 0
+	skintoned = 0
+	limb_type = /datum/limb/rocket
+	handlistPart = "r_hand_rocket"
+
+	New(var/atom/holder)
+		if (holder != null)
+			set_loc(holder)
+		..()
+
+	getMobIcon(var/lying, var/decomp_stage = 0)
+		if (src.standImage && ((src.decomp_affected && src.current_decomp_stage_s == decomp_stage) || !src.decomp_affected))
+			return src.standImage
+		current_decomp_stage_s = decomp_stage
+		src.standImage = image('icons/mob/human.dmi', "[src.slot]_rocket")
+		return standImage

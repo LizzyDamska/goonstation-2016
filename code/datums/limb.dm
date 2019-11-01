@@ -695,3 +695,6 @@
 
 		..()
 		return
+
+// Please be gentle, I don't know what I'm doing (LizzyDamska).
+/datum/limb/rocket
