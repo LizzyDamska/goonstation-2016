@@ -1994,7 +1994,7 @@ obj/decal/fakeobjects/teleport_pad
 
 /obj/decal/fakeobjects/pump
 	name = "fuel pump"
-	desc = "...wait, where exactly is this pump supposed to go?"
+	desc = "...wait, where exactly is the pump supposed to go?"
 	icon = 'icons/obj/32x64.dmi'
 	icon_state = "fuel pump"
 	density = 1
