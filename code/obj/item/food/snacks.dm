@@ -1785,3 +1785,27 @@ var/list/valid_jellybean_reagents = (typesof(/datum/reagent) - /datum/reagent)
 			for (var/i=5, i>0, i--)
 				reagents.add_reagent(pick(src.flavors), 1)
 		return
+
+/obj/item/reagent_containers/food/snacks/gastaco
+	name = "gas station taco"
+	desc = "Looking at it gives you a sense of foreboding."
+	icon = 'icons/obj/foodNdrink/food_meals.dmi'
+	amount = 3
+	heal_amt = -3
+	icon_state = "taco1"
+	initial_volume = 50
+
+	New()
+		..()
+		reagents.add_reagent("sewage", 10)
+		reagents.add_reagent("porktonium", 5)
+		reagents.add_reagent("cholesterol", 10)
+		if(prob(5))
+			reagents.add_reagent("strychnine", 4)
+		return
+
+	heal(var/mob/M)
+		var/disgustingmessage1 = pick("a month old", "a moldy", "a geriatric", "Satan's")
+		var/disgustingmessage2 = pick("trash taco", "piss pizza", "bile burrito")
+		boutput(M, "<span style=\"color:red\">HOLY FUCK!</span> This tastes like [disgustingmessage1] [disgustingmessage2]!")
+

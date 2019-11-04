@@ -24,7 +24,7 @@
 "ax" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/unsimulated/floor/white/grime,/area)
 "ay" = (/turf/unsimulated/floor/white/grime,/area)
 "az" = (/obj/rack,/turf/unsimulated/floor/white/grime,/area)
-"aA" = (/obj/table{icon_state = "5"},/turf/unsimulated/floor/grime,/area)
+"aA" = (/obj/table{icon_state = "5"},/obj/marker/supplymarker,/turf/unsimulated/floor/grime,/area/bill_trader)
 "aB" = (/obj/table{icon_state = "8"},/obj/item/shaker/pepper{pixel_z = 6; pixel_w = 3},/obj/item/shaker/salt{pixel_z = 6; pixel_w = -4},/turf/unsimulated/floor/griffening,/area)
 "aC" = (/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 10},/area)
 "aD" = (/turf/unsimulated/floor/white/side,/area)

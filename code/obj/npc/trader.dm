@@ -975,25 +975,19 @@
 	icon_state = "shittiest bill"
 	picture = "exclown.png"
 	name = "Shittiest Bill"
+	trader_area = "/area/bill_trader"
+	hiketolerance = 0
 
 	New()
 		..()
 		/////////////////////////////////////////////////////////
 		//// sell list //////////////////////////////////////////
 		/////////////////////////////////////////////////////////
-		src.goods_sell += new /datum/commodity/costume/bee(src)
-		src.goods_sell += new /datum/commodity/costume/monkey(src)
-		src.goods_sell += new /datum/commodity/costume/robuddy(src)
-		src.goods_sell += new /datum/commodity/costume/waltwhite(src)
-		src.goods_sell += new /datum/commodity/costume/spiderman(src)
-		src.goods_sell += new /datum/commodity/costume/wonka(src)
-		src.goods_sell += new /datum/commodity/costume/light_borg(src)
-		src.goods_sell += new /datum/commodity/costume/utena(src)
-		src.goods_sell += new /datum/commodity/balloons(src)
+		src.goods_sell += new /datum/commodity/food/burrito(src)
+		src.goods_sell += new /datum/commodity/food/gastaco(src)
 		/////////////////////////////////////////////////////////
 		//// buy list ///////////////////////////////////////////
 		/////////////////////////////////////////////////////////
-		src.goods_buy += new /datum/commodity/goldbar(src)
 		/////////////////////////////////////////////////////////
 
 		greeting= {"Welcome to the Bill Brothers' Diesel Emporium. What can I getcha, brud?"}
@@ -1008,9 +1002,9 @@
 			"Good doin' business with you.",
 			"Don't tell the cops, you dig?")
 
-		failed_sale_dialogue = list("Yo chump, this ain't a pawn shop, I ain't buyin' what you're sellin'.")
+		failed_sale_dialogue = "Yo chump, this ain't a pawn shop, I ain't buyin' what you're sellin'."
 
-		successful_sale_dialogue = list("Huh. I guess I do need one of those. Sure thing, nerd.")
+		successful_sale_dialogue = "Huh. I guess I do need one of those. Sure thing, nerd."
 
 		failed_purchase_dialogue = list("Pal, I know this food is hot garbage, but that don't mean I can just give it away.",
 			"You ain't gettin' no freebies, friendo, I got kids to feed.",
@@ -1019,3 +1013,10 @@
 		pickupdialogue = "Order up!"
 
 		pickupdialoguefailure = "You gotta tell me what you want 'fore you can order it, dweeb."
+
+		errormsgs = list("...huh. If you say so!",
+			"Hey, man, I appreciate it and all, but this is dumpster dining. I can't let you pay more for that, pal.",
+			"Wha.. well, okay! I'm not gonna complain!",
+			"Wait, what? You want me to pay you <i>less</i> for your wares?",
+			"Brud, this is gas station grub. You really that much of a cheapskate?",
+			"Sorry, you're terrible at this. I must be going.")

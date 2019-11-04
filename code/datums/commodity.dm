@@ -1635,3 +1635,21 @@
 	baseprice = 400
 	upperfluc = 400
 	lowerfluc = -200
+
+/datum/commodity/food/burrito
+	comname = "Discounto Billo's Burritos"
+	comtype = /obj/item/reagent_containers/food/snacks/burrito
+	desc = "These look just like the ones from the vending machines, but twice as expensive."
+	price = 20
+	baseprice = 20
+	upperfluc = 5
+	lowerfluc = -5
+
+/datum/commodity/food/gastaco
+	comname = "Gas Station Taco"
+	comtype = /obj/item/reagent_containers/food/snacks/gastaco
+	desc = "That's a little cheap for a taco. What do they fill these things with?"
+	price = 10
+	baseprice = 10
+	upperfluc = 2
+	lowerfluc = -2

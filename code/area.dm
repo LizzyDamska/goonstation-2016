@@ -2981,3 +2981,8 @@
 	name = "Armory"
 	icon_state = "red"
 	sound_environment = 12
+
+/area/bill_trader
+	name = "Gas Station Tacos"
+	icon_state = "green"
+	sound_environment = 2

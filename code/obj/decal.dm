@@ -2008,3 +2008,4 @@ obj/decal/fakeobjects/teleport_pad
 	icon_state = "register"
 	density = 1
 	anchored = 1
+	layer = MOB_LAYER + 1
