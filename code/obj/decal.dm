@@ -1999,4 +1999,12 @@ obj/decal/fakeobjects/teleport_pad
 	icon_state = "fuel pump"
 	density = 1
 	anchored = 1
-	opacity = 1
+	layer = MOB_LAYER + 1
+
+/obj/decal/fakeobjects/register
+	name = "cash register"
+	desc = "Man, who carries credits nowadays?"
+	icon = 'icons/obj/decoration.dmi'
+	icon_state = "register"
+	density = 1
+	anchored = 1

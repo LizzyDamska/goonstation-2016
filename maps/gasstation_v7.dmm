@@ -1,0 +1,85 @@
+"aa" = (/turf/space,/area)
+"ab" = (/obj/lattice{icon_state = "lattice-dir-b"; dir = 6},/turf/space,/area)
+"ac" = (/turf/unsimulated/wall/auto,/area)
+"ad" = (/turf/unsimulated/floor/redwhite/corner,/area)
+"ae" = (/turf/unsimulated/floor/redwhite,/area)
+"af" = (/turf/unsimulated/floor/redwhite/corner{icon_state = "redwhitecorner"; dir = 4},/area)
+"ag" = (/obj/stool,/turf/unsimulated/floor/redwhite,/area)
+"ah" = (/obj/stool,/turf/unsimulated/floor/red/checker,/area)
+"ai" = (/obj/machinery/light/small{dir = 1},/turf/unsimulated/floor/black/grime,/area)
+"aj" = (/obj/stool,/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 4},/area)
+"ak" = (/obj/machinery/door/airlock/external,/turf/unsimulated/floor/black/grime,/area)
+"al" = (/obj/storage/closet,/obj/item/clothing/head/helmet/space,/obj/item/clothing/mask/breath,/obj/item/clothing/suit/space,/obj/item/tank/emergency_oxygen,/turf/unsimulated/floor/black/grime,/area)
+"am" = (/turf/unsimulated/floor/black/grime,/area)
+"an" = (/obj/machinery/vending/cola/blue,/obj/decal/fakeobjects/lightbulb_broken{dir = 1},/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 8},/area)
+"ao" = (/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 1},/area)
+"ap" = (/obj/machinery/vending/cigarette,/turf/unsimulated/floor/white/side{dir = 4},/area)
+"aq" = (/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 8},/area)
+"ar" = (/obj/machinery/light/small{dir = 1},/turf/unsimulated/floor/white/grime,/area)
+"as" = (/obj/decal/fakeobjects/teleport_pad,/obj/landmark/start/latejoin,/obj/landmark/start,/turf/unsimulated/floor/black/grime,/area)
+"at" = (/obj/decal/oven{name = "broken oven"},/turf/unsimulated/floor/griffening,/area)
+"au" = (/obj/machinery/deep_fryer,/turf/unsimulated/floor/griffening,/area)
+"av" = (/obj/decal/sink{name = "Rusty Sink"},/turf/unsimulated/floor/griffening,/area)
+"aw" = (/obj/lattice{icon_state = "lattice-dir"; dir = 4},/turf/space,/area)
+"ax" = (/obj/machinery/light{icon_state = "tube1"; dir = 8},/turf/unsimulated/floor/white/grime,/area)
+"ay" = (/turf/unsimulated/floor/white/grime,/area)
+"az" = (/obj/rack,/turf/unsimulated/floor/white/grime,/area)
+"aA" = (/obj/table{icon_state = "5"},/turf/unsimulated/floor/grime,/area)
+"aB" = (/obj/table{icon_state = "8"},/obj/item/shaker/pepper{pixel_z = 6; pixel_w = 3},/obj/item/shaker/salt{pixel_z = 6; pixel_w = -4},/turf/unsimulated/floor/griffening,/area)
+"aC" = (/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 10},/area)
+"aD" = (/turf/unsimulated/floor/white/side,/area)
+"aE" = (/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 6},/area)
+"aG" = (/obj/npc/trader/gasbill,/turf/unsimulated/floor/griffening,/area)
+"aH" = (/obj/lattice{icon_state = "lattice-dir-b"; dir = 10},/turf/space,/area)
+"aI" = (/obj/lattice{icon_state = "lattice-dir"; dir = 2},/turf/space,/area)
+"aJ" = (/obj/table{icon_state = "4"},/obj/item/shaker/ketchup{pixel_z = 8; pixel_w = -2},/obj/item/shaker/mustard{pixel_z = 6; pixel_w = 3},/turf/unsimulated/floor/grime,/area)
+"aK" = (/obj/table{icon_state = "9"},/turf/unsimulated/floor/griffening,/area)
+"aL" = (/turf/unsimulated/floor/white/side{dir = 4},/area)
+"aM" = (/obj/table/wood{icon_state = "8"},/obj/decal/fakeobjects/register{pixel_z = 7; pixel_w = -2},/turf/unsimulated/floor/white/grime,/area)
+"aN" = (/turf/simulated/wall/auto,/area)
+"aO" = (/obj/window/auto,/turf/unsimulated/floor/neutral,/area)
+"aP" = (/obj/table/wood{icon_state = "12"},/turf/unsimulated/floor/white/grime,/area)
+"aQ" = (/obj/machinery/light/beacon,/turf/simulated/floor/airless/engine,/area)
+"aR" = (/obj/table/wood/round/auto,/obj/item/plate{pixel_z = 8},/turf/unsimulated/floor/red/checker,/area)
+"aS" = (/obj/stool,/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 8},/area)
+"aT" = (/turf/simulated/floor/airless/engine,/area)
+"aU" = (/obj/decal/fakeobjects/pump{dir = 1; step_x = 0},/turf/simulated/floor/airless/engine,/area)
+"aV" = (/obj/table/wood/round/auto,/obj/item/reagent_containers/food/snacks/breakfast{pixel_z = 5},/turf/unsimulated/floor/red/checker,/area)
+"aW" = (/obj/stool,/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 1},/area)
+"aX" = (/obj/machinery/light,/turf/unsimulated/floor/redwhite/corner{icon_state = "redwhitecorner"; dir = 8},/area)
+"aY" = (/obj/machinery/light{dir = 1},/turf/unsimulated/floor/white/grime,/area)
+"aZ" = (/obj/decal/fakeobjects/lighttube_broken{desc = "This light might be broken.  It's probably not wired up, though."; dir = 1; icon_state = "tube0"; name = "inactive light tube"},/turf/unsimulated/floor/white/grime,/area)
+"ba" = (/obj/machinery/light,/turf/unsimulated/floor/redwhite/corner{icon_state = "redwhitecorner"; dir = 1},/area)
+"bb" = (/obj/machinery/light,/turf/unsimulated/floor/white/grime,/area)
+"bc" = (/obj/decal/fakeobjects/lighttube_broken{dir = 4},/turf/unsimulated/floor/white/grime,/area)
+"bg" = (/obj/decal/fakeobjects/pump,/turf/simulated/floor/airless/engine,/area)
+"bh" = (/obj/machinery/vehicle/pod_smooth{icon_state = "pod_civ"; dir = 8},/turf/simulated/floor/airless/engine,/area)
+"bi" = (/obj/machinery/vehicle/miniputt/armed{icon_state = "miniputt"; dir = 8},/turf/simulated/floor/airless/engine,/area)
+"bl" = (/obj/table{icon_state = "3"},/turf/unsimulated/floor/griffening,/area)
+"bm" = (/obj/lattice{tag = "icon-lattice-dir-b (NORTHWEST)"; icon_state = "lattice-dir-b"; dir = 9},/turf/space,/area)
+"bn" = (/obj/lattice{icon_state = "lattice-dir"; dir = 10},/turf/space,/area)
+"bo" = (/obj/lattice{icon_state = "lattice-dir-b"; dir = 5},/turf/space,/area)
+"bp" = (/obj/table/wood{icon_state = "4"},/turf/unsimulated/floor/white/grime,/area)
+
+(1,1,1) = {"
+aaaaabawawawawawawawawawawawawawawawawawawaHaaaaaa
+aaaaaIaQaTaTaTaTaTaTaQaTaTaTaTaQaTaTaTaTaQaIaaaaaa
+aaaaaIaTaUbgaTaTaUbgaTaTaUbgaTaTaTaTaTaTaTaIaaaaaa
+aaaaaIaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaTaIaaaaaa
+aaaaaIaTaTaTaTaTaTaTaTaTbhaTaTaTaTaTaTaTaTaIaaaaaa
+aaaaaIaTaUbgaTaTaUbgaTaTaUbgaTaTaTaTaTaTaTaIaaaaaa
+aaaaaIaTaTbiaTaTaTaTaTaTaTaTaTaQaTaTaTaTaQaIaaaaaa
+aaaaaIaQaTaTaTaTaTaTaQaTaTaTaTacacacakacacacaaaaaa
+aaaaacacacacacacacacacacacacacacalaiasaialacaaaaaa
+aaaaacanblatauavblapayazarazayacalamamamalacaaaaaa
+aaaaaOaqaAaBaGaJaKaLayazayazayacacacakacacaNaaaaaa
+aaaaacaCaDaDaDaDaDaEayazayazayayaYayayayaZacaaaaaa
+aaaaaOayayazazazayayayayayayayayayazazazayaNaaaaaa
+aaaaacaxayazazazayayayayayayayayayayayayayaOaaaaaa
+aaaaaOayayayayayayayayayacacacacaPaMaybpaPaNaaaaaa
+aaaaacadagaeagaeagafazbcacawawacbbayayaybbacaaaaaa
+aaaaaOajaRahaRahaRaSazayacawawacacaOaOaOacacaaaaaa
+aaaaacajaRahaVahaRaSazayacaaaaaabmbnbnbnboaaaaaaaa
+aaaaacaXaWaoaoaoaWbaazayacaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaacacacacacacacacacacacaaaaaaaaaaaaaaaaaaaaaaaa
+"}
