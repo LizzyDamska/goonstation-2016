@@ -968,3 +968,54 @@
 		pickupdialogue = "Thank you very mhHHHONK- Uh, nothing."
 
 		pickupdialoguefailure = "You need to BUY things before you pick them up!"
+
+// Shittiest Bill, the gas man.
+/obj/npc/trader/gasbill
+	icon = 'icons/obj/32x64.dmi'
+	icon_state = "shittiest bill"
+	picture = "exclown.png"
+	name = "Shittiest Bill"
+
+	New()
+		..()
+		/////////////////////////////////////////////////////////
+		//// sell list //////////////////////////////////////////
+		/////////////////////////////////////////////////////////
+		src.goods_sell += new /datum/commodity/costume/bee(src)
+		src.goods_sell += new /datum/commodity/costume/monkey(src)
+		src.goods_sell += new /datum/commodity/costume/robuddy(src)
+		src.goods_sell += new /datum/commodity/costume/waltwhite(src)
+		src.goods_sell += new /datum/commodity/costume/spiderman(src)
+		src.goods_sell += new /datum/commodity/costume/wonka(src)
+		src.goods_sell += new /datum/commodity/costume/light_borg(src)
+		src.goods_sell += new /datum/commodity/costume/utena(src)
+		src.goods_sell += new /datum/commodity/balloons(src)
+		/////////////////////////////////////////////////////////
+		//// buy list ///////////////////////////////////////////
+		/////////////////////////////////////////////////////////
+		src.goods_buy += new /datum/commodity/goldbar(src)
+		/////////////////////////////////////////////////////////
+
+		greeting= {"Welcome to the Bill Brothers' Diesel Emporium. What can I getcha, brud?"}
+
+		portrait_setup = "<img src='[resource("images/traders/[src.picture]")]'><HR><B>[src.name]</B><HR>"
+
+		sell_dialogue = "Buddy, this is a gas station, not a thrift store."
+
+		buy_dialogue = "We got all kinds o' garbage to shove down yer gullet."
+
+		successful_purchase_dialogue = list("Any time, brud.",
+			"Good doin' business with you.",
+			"Don't tell the cops, you dig?")
+
+		failed_sale_dialogue = list("Yo chump, this ain't a pawn shop, I ain't buyin' what you're sellin'.")
+
+		successful_sale_dialogue = list("Huh. I guess I do need one of those. Sure thing, nerd.")
+
+		failed_purchase_dialogue = list("Pal, I know this food is hot garbage, but that don't mean I can just give it away.",
+			"You ain't gettin' no freebies, friendo, I got kids to feed.",
+			"Try again when you get some cashola in your account, capiche?")
+
+		pickupdialogue = "Order up!"
+
+		pickupdialoguefailure = "You gotta tell me what you want 'fore you can order it, dweeb."

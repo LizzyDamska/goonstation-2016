@@ -1999,3 +1999,4 @@ obj/decal/fakeobjects/teleport_pad
 	icon_state = "fuel pump"
 	density = 1
 	anchored = 1
+	opacity = 1

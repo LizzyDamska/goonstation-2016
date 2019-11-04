@@ -1,0 +1,83 @@
+"aa" = (/turf/space,/area)
+"ab" = (/turf/unsimulated/floor/engine,/area)
+"ac" = (/turf/unsimulated/wall/auto,/area)
+"ad" = (/turf/unsimulated/floor/redwhite/corner,/area)
+"ae" = (/turf/unsimulated/floor/redwhite,/area)
+"af" = (/turf/unsimulated/floor/redwhite/corner{icon_state = "redwhitecorner"; dir = 4},/area)
+"ag" = (/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 4},/area)
+"ah" = (/obj/stool,/turf/unsimulated/floor/red/checker,/area)
+"ai" = (/turf/unsimulated/floor/red/checker,/area)
+"aj" = (/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 8},/area)
+"ak" = (/obj/machinery/door/airlock/external,/turf/unsimulated/floor/black/grime,/area)
+"al" = (/obj/storage/closet,/obj/item/clothing/head/helmet/space,/obj/item/clothing/mask/breath,/obj/item/clothing/suit/space,/obj/item/tank/emergency_oxygen,/turf/unsimulated/floor/black/grime,/area)
+"am" = (/turf/unsimulated/floor/black/grime,/area)
+"an" = (/turf/unsimulated/floor/redwhite/corner{icon_state = "redwhitecorner"; dir = 8},/area)
+"ao" = (/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 1},/area)
+"ap" = (/turf/unsimulated/floor/redwhite/corner{icon_state = "redwhitecorner"; dir = 1},/area)
+"aq" = (/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 8},/area)
+"ar" = (/turf/unsimulated/floor/griffening,/area)
+"as" = (/obj/decal/fakeobjects/teleport_pad,/turf/unsimulated/floor/black/grime,/area)
+"at" = (/obj/machinery/deep_fryer,/turf/unsimulated/floor/griffening,/area)
+"au" = (/obj/decal/sink,/turf/unsimulated/floor/griffening,/area)
+"av" = (/obj/decal/oven,/turf/unsimulated/floor/griffening,/area)
+"aw" = (/obj/machinery/vehicle/pod_civ{icon_state = "pod_civ"; dir = 8},/turf/unsimulated/floor/engine,/area)
+"ax" = (/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 4},/area)
+"ay" = (/turf/unsimulated/floor/white/grime,/area)
+"az" = (/obj/machinery/vending/cigarette,/turf/unsimulated/floor/white/grime,/area)
+"aA" = (/obj/npc/trader/gasbill,/turf/unsimulated/floor/grime,/area)
+"aB" = (/obj/machinery/vending/cola,/turf/unsimulated/floor/white/grime,/area)
+"aC" = (/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 10},/area)
+"aD" = (/turf/unsimulated/floor/white/side,/area)
+"aE" = (/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 6},/area)
+"aF" = (/obj/wingrille_spawn,/obj/window/auto,/turf/unsimulated/floor/neutral,/area)
+"aG" = (/obj/table{icon_state = "2"},/turf/unsimulated/floor/grime,/area)
+"aH" = (/obj/decal/fakeobjects/pump,/turf/unsimulated/floor/engine,/area)
+"aI" = (/obj/machinery/vehicle/miniputt/armed{icon_state = "miniputt"; dir = 8},/turf/unsimulated/floor/engine,/area)
+"aJ" = (/obj/table{icon_state = "5"},/turf/unsimulated/floor/griffening,/area)
+"aK" = (/obj/table{icon_state = "12"},/turf/unsimulated/floor/griffening,/area)
+"aL" = (/obj/table{icon_state = "12"},/turf/unsimulated/floor/grime,/area)
+"aM" = (/obj/table{icon_state = "9"},/turf/unsimulated/floor/griffening,/area)
+"aN" = (/obj/table{icon_state = "6"},/turf/unsimulated/floor/white/grime,/area)
+"aO" = (/obj/table{icon_state = "12"},/turf/unsimulated/floor/white/grime,/area)
+"aP" = (/obj/table{icon_state = "8"},/turf/unsimulated/floor/white/grime,/area)
+"aQ" = (/obj/table{icon_state = "3"},/obj/item/shaker/mustard{step_x = 4; step_y = -1},/obj/item/shaker/ketchup{step_x = -4; step_y = -2},/turf/unsimulated/floor/grime,/area)
+"aR" = (/obj/wingrille_spawn,/obj/window/auto,/obj/window/auto,/turf/unsimulated/floor/neutral,/area)
+"aS" = (/obj/storage/secure/closet/fridge,/obj/item/reagent_containers/food/snacks/burrito,/obj/item/reagent_containers/food/snacks/burrito,/obj/item/reagent_containers/food/snacks/burrito,/obj/item/reagent_containers/food/snacks/burrito,/obj/item/reagent_containers/food/snacks/burrito,/obj/item/reagent_containers/food/snacks/burrito,/obj/item/reagent_containers/food/snacks/burrito,/obj/item/reagent_containers/food/snacks/burrito,/obj/item/reagent_containers/food/snacks/burrito,/obj/item/reagent_containers/food/snacks/burrito,/obj/item/reagent_containers/food/snacks/corndog,/obj/item/reagent_containers/food/snacks/corndog,/obj/item/reagent_containers/food/snacks/corndog,/obj/item/reagent_containers/food/snacks/fries,/obj/item/reagent_containers/food/snacks/fries,/obj/item/reagent_containers/food/snacks/fries,/obj/item/reagent_containers/food/snacks/hotdog,/obj/item/reagent_containers/food/snacks/hotdog,/obj/item/reagent_containers/food/snacks/hotdog,/obj/item/reagent_containers/food/snacks/burger/sloppyjoe,/turf/unsimulated/floor/griffening,/area)
+"aT" = (/obj/decal/fakeobjects/pump{dir = 1; step_x = 0},/turf/unsimulated/floor/engine,/area)
+"aU" = (/obj/table{icon_state = "3"},/obj/item/shaker/pepper{step_x = -4; step_y = 21},/obj/item/shaker/salt{step_x = 5; step_y = 21},/turf/unsimulated/floor/griffening,/area)
+"aV" = (/obj/table{icon_state = "12"},/obj/deskclutter{step_x = -2; step_y = 4},/turf/unsimulated/floor/griffening,/area)
+"aW" = (/obj/table/wood/auto,/obj/item/plate{step_y = 9},/turf/unsimulated/floor/red/checker,/area)
+"aX" = (/obj/table/wood/auto,/obj/item/reagent_containers/food/snacks/breakfast{step_y = 5},/turf/unsimulated/floor/red/checker,/area)
+"aY" = (/obj/machinery/light/worn{brightness = 2; dir = 4},/turf/unsimulated/floor/white/grime,/area)
+"aZ" = (/obj/machinery/light{dir = 8; icon_state = "tube1"; layer = 9.1; pixel_x = -10},/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 4},/area)
+"ba" = (/obj/machinery/light/worn{brightness = 2; dir = 4},/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 8},/area)
+"bb" = (/obj/machinery/light,/turf/unsimulated/floor/white/grime,/area)
+"bc" = (/obj/machinery/light,/turf/unsimulated/floor/redwhite{icon_state = "redwhite"; dir = 1},/area)
+"bd" = (/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 8},/area)
+"be" = (/obj/machinery/light/small{icon_state = "bulb1"; dir = 1},/turf/unsimulated/floor/white/side{icon_state = "whitehall"; dir = 4},/area)
+"bf" = (/obj/machinery/light/small/floor,/turf/unsimulated/floor/engine,/area)
+"bg" = (/obj/machinery/light/small/floor,/turf/unsimulated/floor/black/grime,/area)
+"bh" = (/obj/machinery/light{dir = 1; icon_state = "tube1"; layer = 9.1; pixel_y = 21},/turf/unsimulated/floor/white/grime,/area)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaabaTaHababaTaHababaTaHabababababababaaaaaaaa
+aaaaaaababababababababababababababababababaaaaaaaa
+aaaaaaababbfabababbfababawbfababababbfababaaaaaaaa
+aaaaaaabaTaHababaTaHababaTaHabababababababaaaaaaaa
+aaaaaaababaIabababababababababababababababaaaaaaaa
+aaaaaaababbfabababbfabababbfabacacacakacacacaaaaaa
+aaaaacacacacacacacacacacacacacacalamasamalacaaaaaa
+aaaaacbdararaSatauavaQbeayazaBacalambgamalacaaaaaa
+aaaaaFaqaGararaAararaUaxayayayacacacakacacaFaaaaaa
+aaaaacaqaJaVaLaKaLaKaMaxayayayaybhayayaybhacaaaaaa
+aaaaaFaCaDaDaDaDaDaDaDaEayayayayayayayayayaFaaaaaa
+aaaaacadaeaeaeaeaeaeaeafayayayaNaOaOaOaPaYacaaaaaa
+aaaaaFagahahahaiahahahajacacacacayayayayayaFaaaaaa
+aaaaacaZaWaXaWaiaWaWaWbaacaaaaacbbayayaybbacaaaaaa
+aaaaaFagahahahaiahahahajacaaaaacacaFaRaFacacaaaaaa
+aaaaacagaiaiaiaiaiaiaiajacaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaacanaoaoaobcaoaoaoapacaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaacacacacacacacacacacacaaaaaaaaaaaaaaaaaaaaaaaa
+"}
