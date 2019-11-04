@@ -1653,3 +1653,44 @@
 	baseprice = 10
 	upperfluc = 2
 	lowerfluc = -2
+
+/datum/commodity/food/omelette
+	comname = "Early Bird Special"
+	comtype = /obj/item/reagent_containers/food/snacks/omelette
+	desc = "Made from free-range eggs! Ranging from rancid to putrid, that is."
+	price = 20
+	baseprice = 20
+	upperfluc = 5
+	lowerfluc = 5
+
+/datum/commodity/food/corndog
+	comname = "Shittiest Corndog"
+	comtype = /obj/item/reagent_containers/food/snacks/corndog
+	desc = "Definitely looks like it lives up to the name."
+	price = 10
+	baseprice = 10
+	upperfluc = 2
+	lowerfluc = 2
+
+/datum/commodity/food/gruel
+	comname = "Gassy Gruel"
+	comtype = /obj/item/reagent_containers/food/snacks/soup/gruel
+	desc = "Still looks better than the tacos."
+	price = 5
+	baseprice = 5
+
+/datum/commodity/food/monsterburger
+	comname = "The Bill Burger"
+	comtype = /obj/item/reagent_containers/food/snacks/burger/monsterburger
+	desc = "Is this how he got so huge?"
+	price = 100
+	baseprice = 100
+	upperfluc = 20
+	lowerfluc = 20
+
+/datum/commodity/food/fries
+	comname = "Fries...?"
+	comtype = /obj/item/reagent_containers/food/snacks/fries
+	desc = "They look kinda like fries. Who knows if they're edible, though."
+	price = 10
+	baseprice = 10

@@ -985,6 +985,11 @@
 		/////////////////////////////////////////////////////////
 		src.goods_sell += new /datum/commodity/food/burrito(src)
 		src.goods_sell += new /datum/commodity/food/gastaco(src)
+		src.goods_sell += new /datum/commodity/food/omelette(src)
+		src.goods_sell += new /datum/commodity/food/corndog(src)
+		src.goods_sell += new /datum/commodity/food/gruel(src)
+		src.goods_sell += new /datum/commodity/food/monsterburger(src)
+		src.goods_sell += new /datum/commodity/food/fries(src)
 		/////////////////////////////////////////////////////////
 		//// buy list ///////////////////////////////////////////
 		/////////////////////////////////////////////////////////
@@ -1019,4 +1024,4 @@
 			"Wha.. well, okay! I'm not gonna complain!",
 			"Wait, what? You want me to pay you <i>less</i> for your wares?",
 			"Brud, this is gas station grub. You really that much of a cheapskate?",
-			"Sorry, you're terrible at this. I must be going.")
+			"Get outta my gas station, dork.")

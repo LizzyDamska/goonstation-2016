@@ -1805,7 +1805,7 @@ var/list/valid_jellybean_reagents = (typesof(/datum/reagent) - /datum/reagent)
 		return
 
 	heal(var/mob/M)
-		var/disgustingmessage1 = pick("a month old", "a moldy", "a geriatric", "Satan's")
-		var/disgustingmessage2 = pick("trash taco", "piss pizza", "bile burrito")
+		var/disgustingmessage1 = pick("a year old", "a moldy", "a geriatric", "Satan's", "an unholy")
+		var/disgustingmessage2 = pick("trash taco", "puke pizza", "bile burrito", "piss twister", "chunky chalupa")
 		boutput(M, "<span style=\"color:red\">HOLY FUCK!</span> This tastes like [disgustingmessage1] [disgustingmessage2]!")
 
