@@ -783,3 +783,14 @@
 		current_decomp_stage_s = decomp_stage
 		src.standImage = image('icons/mob/human.dmi', "[src.slot]_rocket")
 		return standImage
+
+/datum/projectile/rocketarm/rocketarm_right
+	name = "Rocket Arm"
+	icon_state = "rocket_arm_right"
+	power = 65
+	dissipation_rate = 1
+	shot_sound = 'sound/weapons/rocketarm.ogg'
+	ks_ratio = 0.1
+
+	on_hit(atom/hit)
+		new /obj/item/parts/human_parts/arm/right/rocket(get_turf(hit))
