@@ -99,6 +99,12 @@ MATERIAL COLLECTOR
 	module_research = list("tools" = 4, "metals" = 2)
 	rand_pos = 1
 
+	attack(mob/living/carbon/M as mob, mob/user as mob)
+		logTheThing("combat", user, M, "used [src] on %target% (<b>Intent</b>: <i>[user.a_intent]</i>) (<b>Targeting</b>: <i>[user.zone_sel.selecting]</i>)")
+		if (!wrench_surgery(M, user))
+			return ..()
+		else return
+
 /obj/item/wrench/monkey
 	icon_state = "monkey_wrench"
 	name = "monkey wrench"
