@@ -184,3 +184,78 @@
 					boutput(C, "<span style=\"color:red\">[src.personalized_stink]</span>")
 				else
 					boutput(C, "<span style=\"color:red\">[stinkString()]</span>")
+
+////////////////
+// Rocket Arm //
+///////////////
+/mob/proc/give_rocketarm(var/arm_check = 0, var/remove_powers = 0)
+	if(ishuman(src))
+		var/mob/living/carbon/human/dingus = src
+		if(remove_powers == 1)
+			dingus.abilityHolder.removeAbility(/datum/targetable/geneticsAbility/rocketpunch/rocketpunch_l)
+			dingus.abilityHolder.removeAbility(/datum/targetable/geneticsAbility/rocketpunch/rocketpunch_r)
+			return
+
+		else
+			if (arm_check == 1 && (dingus.limbs.l_arm && istype(dingus.limbs.l_arm, /obj/item/parts/human_parts/arm/left/rocket)))
+				if(dingus.limbs.r_arm && istype(dingus.limbs.r_arm, /obj/item/parts/human_parts/arm/right/rocket))
+					var/datum/abilityHolder/robotics/rocket2 = dingus.add_ability_holder(/datum/abilityHolder/robotics)
+					rocket2.addAbility(/datum/targetable/geneticsAbility/rocketpunch/rocketpunch_r)
+					rocket2.addAbility(/datum/targetable/geneticsAbility/rocketpunch/rocketpunch_l)
+				else
+					var/datum/abilityHolder/robotics/rocket3 = dingus.add_ability_holder(/datum/abilityHolder/robotics)
+					rocket3.addAbility(/datum/targetable/geneticsAbility/rocketpunch/rocketpunch_l)
+			else if (arm_check == 1 && (dingus.limbs.r_arm && istype(dingus.limbs.r_arm, /obj/item/parts/human_parts/arm/right/rocket)))
+				var/datum/abilityHolder/robotics/rocket4 = dingus.add_ability_holder(/datum/abilityHolder/robotics)
+				rocket4.addAbility(/datum/targetable/geneticsAbility/rocketpunch/rocketpunch_r)
+			else
+				return
+
+/datum/abilityHolder/robotics
+	usesPoints = 0
+	regenRate = 0
+	tabName = "Roboman"
+
+/datum/targetable/geneticsAbility/rocketpunch/rocketpunch_l
+	name = "Rocket Punch"
+	desc = "Lets you punch people from a distance!"
+	icon_state = "template"
+
+	cast(atom/target)
+		if (..())
+			return 1
+		if(ishuman(owner))
+			var/mob/living/carbon/human/dwight = owner
+			if(!dwight.l_hand)
+				var/turf/T = get_turf(target)
+				var/projectile_path = /datum/projectile/rocketarm/rocketarm_left
+				owner.visible_message("<span style=\"color:red\"><b>[owner.name]</b> fires \his arm!</span>")
+				var/datum/projectile/rocketarm/rocketarm_left/PJ = new projectile_path
+				shoot_projectile_ST(owner, PJ, T)
+				dwight.limbs.l_arm = null
+				qdel(dwight.limbs.l_arm)
+				owner.give_rocketarm(1, 1)
+			else
+				boutput(usr, "You can't make a fist with something in your hand!")
+
+/datum/targetable/geneticsAbility/rocketpunch/rocketpunch_r
+	name = "Rocket Punch"
+	desc = "Lets you punch people from a distance!"
+	icon_state = "template"
+
+	cast(atom/target)
+		if (..())
+			return 1
+		if(ishuman(owner))
+			var/mob/living/carbon/human/dwight = owner
+			if(!owner.r_hand)
+				var/turf/T = get_turf(target)
+				var/projectile_path = /datum/projectile/rocketarm/rocketarm_right
+				owner.visible_message("<span style=\"color:red\"><b>[owner.name]</b> fires \his arm!</span>")
+				var/datum/projectile/rocketarm/rocketarm_right/PJ = new projectile_path
+				shoot_projectile_ST(owner, PJ, T)
+				dwight.limbs.r_arm = null
+				qdel(dwight.limbs.r_arm)
+				owner.give_rocketarm(1, 1)
+			else
+				boutput(usr, "You can't make a fist with something in your hand!")
