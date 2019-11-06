@@ -51,7 +51,7 @@
 		if(user.zone_sel.selecting != slot || !ishuman(M))
 			return ..()
 
-		if(!(locate(/obj/machinery/optable, M.loc) && M.lying) && !(locate(/obj/table, M.loc) && (M.paralysis || M.stat)) && !(M.reagents && M.reagents.get_reagent_amount("ethanol") > 10 && M == user))
+		if(!(locate(/obj/machinery/optable, M.loc) && M.lying) && !(locate(/obj/table, M.loc) && (M.paralysis || M.stat)) && !(M.reagents && M.reagents.get_reagent_amount("ethanol") > 10 && M == user) && !istype(src, /obj/item/parts/human_parts/arm/left/rocket) && !istype(src, /obj/item/parts/human_parts/arm/right/rocket))
 			return ..()
 
 		var/mob/living/carbon/human/H = M
@@ -107,7 +107,12 @@
 				src.standImage.color = newrgb
 
 	surgery(var/obj/item/tool)
-		if(remove_stage > 1 && tool.type == /obj/item/staple_gun)
+		if(remove_stage > 1 && istype(tool, /obj/item/wrench) && (istype(src, /obj/item/parts/human_parts/arm/left/rocket) || istype(src, /obj/item/parts/human_parts/arm/right/rocket)))
+			remove_stage = 0
+			playsound(get_turf(src), "sound/items/Ratchet.ogg", 40, 1)
+			holder.give_rocketarm(1, 0)
+
+		else if(remove_stage > 1 && istype (tool, /obj/item/staple_gun) && (!istype(src, /obj/item/parts/human_parts/arm/left/rocket) && !istype(src, /obj/item/parts/human_parts/arm/right/rocket)))
 			remove_stage = 0
 
 		else if(remove_stage == 0 || remove_stage == 2)
@@ -124,9 +129,14 @@
 
 		switch(remove_stage)
 			if(0)
-				tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] staples [holder.name]'s [src.name] securely to their stump with [tool].</span>", "<span style=\"color:red\">You staple [holder.name]'s [src.name] securely to their stump with [tool].</span>")
-				logTheThing("combat", tool.the_mob, holder, "staples %target%'s [src.name] back on")
-				logTheThing("diary", tool.the_mob, holder, "staples %target%'s [src.name] back on", "combat")
+				if(istype(src, /obj/item/parts/human_parts/arm/left/rocket) || istype(src, /obj/item/parts/human_parts/arm/right/rocket))
+					tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] wrenches [holder.name]'s [src.name] securely to their stump with [tool].</span>", "<span style=\"color:red\">You wrench [holder.name]'s [src.name] securely to their stump with [tool].</span>")
+					logTheThing("combat", tool.the_mob, holder, "wrenches %target%'s [src.name] back on")
+					logTheThing("diary", tool.the_mob, holder, "wrenches %target%'s [src.name] back on", "combat")
+				else
+					tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] staples [holder.name]'s [src.name] securely to their stump with [tool].</span>", "<span style=\"color:red\">You staple [holder.name]'s [src.name] securely to their stump with [tool].</span>")
+					logTheThing("combat", tool.the_mob, holder, "staples %target%'s [src.name] back on")
+					logTheThing("diary", tool.the_mob, holder, "staples %target%'s [src.name] back on", "combat")
 			if(1)
 				tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] slices through the skin and flesh of [holder.name]'s [src.name] with [tool].</span>", "<span style=\"color:red\">You slice through the skin and flesh of [holder.name]'s [src.name] with [tool].</span>")
 			if(2)
@@ -141,11 +151,11 @@
 				logTheThing("diary", tool.the_mob, holder, "removes %target%'s [src.name]", "combat")
 				src.remove(0)
 
-		if(holder.stat != 2)
+		if(holder.stat != 2 && !istype(src, /obj/item/parts/human_parts/arm/left/rocket) && !istype(src, /obj/item/parts/human_parts/arm/right/rocket))
 			if(prob(40))
 				holder.emote("scream")
-		holder.TakeDamage("chest",20,0)
-		take_bleeding_damage(holder, null, 15, DAMAGE_STAB)
+			holder.TakeDamage("chest",20,0)
+			take_bleeding_damage(holder, null, 15, DAMAGE_STAB)
 
 		return 1
 
@@ -784,13 +794,37 @@
 		src.standImage = image('icons/mob/human.dmi', "[src.slot]_rocket")
 		return standImage
 
-/datum/projectile/rocketarm/rocketarm_right
+/datum/projectile/rocketarm
+	var/turf/last_nonwall = null
+
+	tick(obj/projectile/O)
+		if(!get_turf(O).density)
+			last_nonwall = get_turf(O)
+
+/datum/projectile/rocketarm/rocketarm_left
 	name = "Rocket Arm"
-	icon_state = "rocket_arm_right"
+	icon_state = "rocket_arm_left"
 	power = 65
+	damage_type = D_KINETIC
+	hit_type = DAMAGE_BLUNT
 	dissipation_rate = 1
 	shot_sound = 'sound/weapons/rocketarm.ogg'
 	ks_ratio = 0.1
 
-	on_hit(atom/hit)
-		new /obj/item/parts/human_parts/arm/right/rocket(get_turf(hit))
+	on_hit(atom/hit, angle, var/obj/projectile/O)
+		var /obj/item/parts/human_parts/arm/left/rocket/my_rocket = new(last_nonwall)
+		my_rocket.dir = O.dir
+
+/datum/projectile/rocketarm/rocketarm_right
+	name = "Rocket Arm"
+	icon_state = "rocket_arm_right"
+	power = 65
+	damage_type = D_KINETIC
+	hit_type = DAMAGE_BLUNT
+	dissipation_rate = 1
+	shot_sound = 'sound/weapons/rocketarm.ogg'
+	ks_ratio = 0.1
+
+	on_hit(atom/hit, angle, var/obj/projectile/O)
+		var /obj/item/parts/human_parts/arm/right/rocket/my_rocket = new(last_nonwall)
+		my_rocket.dir = O.dir
