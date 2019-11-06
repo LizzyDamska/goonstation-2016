@@ -142,7 +142,7 @@
 		if(H.traitHolder && !H.traitHolder.hasTrait("glasscannon"))
 			H.process_stamina(STAMINA_GRAB_COST)
 
-		if (!target.stat && !target.weakened && !target.stunned && !target.paralysis && target.a_intent == "disarm" && target.stamina > STAMINA_DEFAULT_BLOCK_COST && prob(STAMINA_GRAB_BLOCK_CHANCE) && !target.equipped())
+		if (!target.stat && !target.weakened && !target.stunned && !target.paralysis && target.a_intent == "disarm" && target.stamina > STAMINA_DEFAULT_BLOCK_COST && prob(STAMINA_GRAB_BLOCK_CHANCE) && !target.equipped() && !target.handcuffed)
 			src.visible_message("<span style=\"color:red\"><B>[target] blocks [src]'s attempt to grab [him_or_her(target)]!</span>")
 			playsound(target.loc, 'sound/weapons/punchmiss.ogg', 25, 1, 1)
 
@@ -288,7 +288,7 @@
 	return 0
 
 /mob/proc/do_block(var/mob/attacker)
-	if (check_block())
+	if (check_block() && !src.handcuffed)
 		visible_message("<span style=\"color:red\"><B>[src] blocks [attacker]'s attack!</span>")
 		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1, 1)
 
