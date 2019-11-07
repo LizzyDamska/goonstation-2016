@@ -135,6 +135,12 @@ MATERIAL COLLECTOR
 	module_research = list("tools" = 4, "metals" = 1)
 	rand_pos = 1
 
+	attack(mob/living/carbon/M as mob, mob/user as mob)
+		logTheThing("combat", user, M, "used [src] on %target% (<b>Intent</b>: <i>[user.a_intent]</i>) (<b>Targeting</b>: <i>[user.zone_sel.selecting]</i>)")
+		if (!screw_surgery(M, user))
+			return ..()
+		else return
+
 /obj/item/screwdriver/suicide(var/mob/user as mob)
 	user.visible_message("<span style=\"color:red\"><b>[user] jams the screwdriver into \his eye over and over and over.</b></span>")
 	take_bleeding_damage(user, null, 25, DAMAGE_STAB)

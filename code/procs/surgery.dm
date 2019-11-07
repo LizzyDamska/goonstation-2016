@@ -1413,10 +1413,26 @@
 		else
 			return 0
 /* ============================= */
-/* ---------- WRENCH ---------- */
+/* ---------- WRENCH ----------- */
 /* ============================= */
 
 /obj/item/proc/wrench_surgery(var/mob/living/carbon/human/patient as mob, var/mob/living/surgeon as mob)
+	if (!ishuman(patient))
+		return 0
+	if (!patient.organHolder)
+		return 0
+
+	else if (surgeon.zone_sel.selecting in list("l_arm","r_arm","l_leg","r_leg"))
+		var/obj/item/parts/surgery_limb = patient.limbs.vars[surgeon.zone_sel.selecting]
+		if (istype(surgery_limb))
+			if (surgery_limb.surgery(src))
+				return 1
+
+/* ================================= */
+/* ---------- SCREWDRIVER ---------- */
+/* ================================= */
+
+/obj/item/proc/screw_surgery(var/mob/living/carbon/human/patient as mob, var/mob/living/surgeon as mob)
 	if (!ishuman(patient))
 		return 0
 	if (!patient.organHolder)

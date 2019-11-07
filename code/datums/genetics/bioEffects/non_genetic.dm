@@ -197,15 +197,15 @@
 			return
 
 		else
-			if (arm_check == 1 && (dingus.limbs.l_arm && istype(dingus.limbs.l_arm, /obj/item/parts/human_parts/arm/left/rocket)))
-				if(dingus.limbs.r_arm && istype(dingus.limbs.r_arm, /obj/item/parts/human_parts/arm/right/rocket))
+			if (arm_check == 1 && (dingus.limbs.l_arm && istype(dingus.limbs.l_arm, /obj/item/parts/human_parts/arm/prostheses/left/rocket)))
+				if(dingus.limbs.r_arm && istype(dingus.limbs.r_arm, /obj/item/parts/human_parts/arm/prostheses/right/rocket))
 					var/datum/abilityHolder/robotics/rocket2 = dingus.add_ability_holder(/datum/abilityHolder/robotics)
 					rocket2.addAbility(/datum/targetable/organAbility/rocketpunch/rocketpunch_r)
 					rocket2.addAbility(/datum/targetable/organAbility/rocketpunch/rocketpunch_l)
 				else
 					var/datum/abilityHolder/robotics/rocket3 = dingus.add_ability_holder(/datum/abilityHolder/robotics)
 					rocket3.addAbility(/datum/targetable/organAbility/rocketpunch/rocketpunch_l)
-			else if (arm_check == 1 && (dingus.limbs.r_arm && istype(dingus.limbs.r_arm, /obj/item/parts/human_parts/arm/right/rocket)))
+			else if (arm_check == 1 && (dingus.limbs.r_arm && istype(dingus.limbs.r_arm, /obj/item/parts/human_parts/arm/prostheses/right/rocket)))
 				var/datum/abilityHolder/robotics/rocket4 = dingus.add_ability_holder(/datum/abilityHolder/robotics)
 				rocket4.addAbility(/datum/targetable/organAbility/rocketpunch/rocketpunch_r)
 			else

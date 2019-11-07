@@ -51,13 +51,17 @@
 		if(user.zone_sel.selecting != slot || !ishuman(M))
 			return ..()
 
-		if(!(locate(/obj/machinery/optable, M.loc) && M.lying) && !(locate(/obj/table, M.loc) && (M.paralysis || M.stat)) && !(M.reagents && M.reagents.get_reagent_amount("ethanol") > 10 && M == user) && !istype(src, /obj/item/parts/human_parts/arm/left/rocket) && !istype(src, /obj/item/parts/human_parts/arm/right/rocket))
+		if(!(locate(/obj/machinery/optable, M.loc) && M.lying) && !(locate(/obj/table, M.loc) && (M.paralysis || M.stat)) && !(M.reagents && M.reagents.get_reagent_amount("ethanol") > 10 && M == user) && !istype(src, /obj/item/parts/human_parts/arm/prostheses))
 			return ..()
 
 		var/mob/living/carbon/human/H = M
 
-		if(H.limbs.vars[src.slot])
+		if(H.limbs.vars[src.slot] && !istype(H.limbs.vars[src.slot], /obj/item/parts/human_parts/arm/left/robostump) && !istype(H.limbs.vars[src.slot], /obj/item/parts/human_parts/arm/right/robostump))
 			boutput(user, "<span style=\"color:red\">[H.name] already has one of those!</span>")
+			return
+
+		if(!istype(src, /obj/item/parts/human_parts/arm/prostheses))
+			boutput(user, "<span style=\"color:red\">You can't figure out how to fit that in the socket!</span>")
 			return
 
 		attach(H,user)
@@ -107,12 +111,8 @@
 				src.standImage.color = newrgb
 
 	surgery(var/obj/item/tool)
-		if(remove_stage > 1 && istype(tool, /obj/item/wrench) && (istype(src, /obj/item/parts/human_parts/arm/left/rocket) || istype(src, /obj/item/parts/human_parts/arm/right/rocket)))
-			remove_stage = 0
-			playsound(get_turf(src), "sound/items/Ratchet.ogg", 40, 1)
-			holder.give_rocketarm(1, 0)
 
-		else if(remove_stage > 1 && istype (tool, /obj/item/staple_gun) && (!istype(src, /obj/item/parts/human_parts/arm/left/rocket) && !istype(src, /obj/item/parts/human_parts/arm/right/rocket)))
+		if(remove_stage > 1 && istype (tool, /obj/item/staple_gun))
 			remove_stage = 0
 
 		else if(remove_stage == 0 || remove_stage == 2)
@@ -129,14 +129,9 @@
 
 		switch(remove_stage)
 			if(0)
-				if(istype(src, /obj/item/parts/human_parts/arm/left/rocket) || istype(src, /obj/item/parts/human_parts/arm/right/rocket))
-					tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] wrenches [holder.name]'s [src.name] securely to their stump with [tool].</span>", "<span style=\"color:red\">You wrench [holder.name]'s [src.name] securely to their stump with [tool].</span>")
-					logTheThing("combat", tool.the_mob, holder, "wrenches %target%'s [src.name] back on")
-					logTheThing("diary", tool.the_mob, holder, "wrenches %target%'s [src.name] back on", "combat")
-				else
-					tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] staples [holder.name]'s [src.name] securely to their stump with [tool].</span>", "<span style=\"color:red\">You staple [holder.name]'s [src.name] securely to their stump with [tool].</span>")
-					logTheThing("combat", tool.the_mob, holder, "staples %target%'s [src.name] back on")
-					logTheThing("diary", tool.the_mob, holder, "staples %target%'s [src.name] back on", "combat")
+				tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] staples [holder.name]'s [src.name] securely to their stump with [tool].</span>", "<span style=\"color:red\">You staple [holder.name]'s [src.name] securely to their stump with [tool].</span>")
+				logTheThing("combat", tool.the_mob, holder, "staples %target%'s [src.name] back on")
+				logTheThing("diary", tool.the_mob, holder, "staples %target%'s [src.name] back on", "combat")
 			if(1)
 				tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] slices through the skin and flesh of [holder.name]'s [src.name] with [tool].</span>", "<span style=\"color:red\">You slice through the skin and flesh of [holder.name]'s [src.name] with [tool].</span>")
 			if(2)
@@ -151,7 +146,7 @@
 				logTheThing("diary", tool.the_mob, holder, "removes %target%'s [src.name]", "combat")
 				src.remove(0)
 
-		if(holder.stat != 2 && !istype(src, /obj/item/parts/human_parts/arm/left/rocket) && !istype(src, /obj/item/parts/human_parts/arm/right/rocket))
+		if(holder.stat != 2)
 			if(prob(40))
 				holder.emote("scream")
 			holder.TakeDamage("chest",20,0)
@@ -748,15 +743,119 @@
 		src.standImage = image('icons/mob/human.dmi', "[src.slot]_predator")
 		return standImage
 
-/obj/item/parts/human_parts/arm/left/rocket
-	name = "left rocket arm"
-	desc = "A high-tech prosthesis. It's even got a built-in lighter... but it's out of lighter fluid."
+/////////////////
+///PROSTHETICS///
+/////////////////
+
+/obj/item/parts/human_parts/arm/left/robostump
+	name = "left prosthetic socket"
+	desc = "A socket which allows for the attachment of modular prostheses."
+	icon_state = "arm_left_robostump"
+	slot = "l_arm"
+	side = "left"
+	decomp_affected = 0
+	skintoned = 0
+	can_hold_items = 0
+	override_attack_hand = 1
+	handlistPart = "blank"
+
+	New(var/atom/holder)
+		if (holder != null)
+			set_loc(holder)
+		..()
+
+	getMobIcon(var/lying, var/decomp_stage = 0)
+		if (src.standImage && ((src.decomp_affected && src.current_decomp_stage_s == decomp_stage) || !src.decomp_affected))
+			return src.standImage
+		current_decomp_stage_s = decomp_stage
+		src.standImage = image('icons/mob/human.dmi', "[src.slot]_robostump")
+		return standImage
+
+/obj/item/parts/human_parts/arm/right/robostump
+	name = "right prosthetic socket"
+	desc = "A socket which allows for the attachment of modular prostheses."
+	icon_state = "arm_right_robostump"
+	slot = "r_arm"
+	side = "right"
+	decomp_affected = 0
+	skintoned = 0
+	can_hold_items = 0
+	override_attack_hand = 1
+	handlistPart = "blank"
+
+	New(var/atom/holder)
+		if (holder != null)
+			set_loc(holder)
+		..()
+
+	getMobIcon(var/lying, var/decomp_stage = 0)
+		if (src.standImage && ((src.decomp_affected && src.current_decomp_stage_s == decomp_stage) || !src.decomp_affected))
+			return src.standImage
+		current_decomp_stage_s = decomp_stage
+		src.standImage = image('icons/mob/human.dmi', "[src.slot]_robostump")
+		return standImage
+
+/obj/item/parts/human_parts/arm/prostheses
+	attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
+		if(!ismob(M) || !ishuman(M))
+			return..()
+		else
+			var/mob/living/carbon/human/H = M
+			if(user.zone_sel.selecting == slot && (!H.limbs.vars[src.slot] || (H.limbs.vars[src.slot] && !istype(H.limbs.vars[src.slot], /obj/item/parts/human_parts/arm/left/robostump) && !istype(H.limbs.vars[src.slot], /obj/item/parts/human_parts/arm/right/robostump))))
+				boutput(user, "<span style=\"color:red\">You need a specialised socket to attach that prosthetic to!</span>")
+				return
+			else
+				..()
+
+	surgery(var/obj/item/tool)
+		if(remove_stage == 1 && istype(tool, /obj/item/wrench))
+			remove_stage = 0
+			playsound(get_turf(src), "sound/items/Ratchet.ogg", 40, 1)
+
+		else if(remove_stage == 0)
+			if(istype(tool, /obj/item/wrench))
+				remove_stage ++
+			else
+				return 0
+
+		else if(remove_stage == 1)
+			if(istype(tool, /obj/item/screwdriver))
+				remove_stage = 3
+			else
+				return 0
+
+		else if(remove_stage == 2)
+			if(istype(tool, /obj/item/screwdriver))
+				remove_stage --
+			else
+				return 0
+
+		switch(remove_stage)
+			if(0)
+				tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] wrenches [holder.name]'s [src.name] securely to their stump.</span>", "<span style=\"color:red\">You wrench [holder.name]'s [src.name] securely to their stump.</span>")
+				logTheThing("combat", tool.the_mob, holder, "wrenches %target%'s [src.name] back on")
+				logTheThing("diary", tool.the_mob, holder, "wrenches %target%'s [src.name] back on", "combat")
+			if(1)
+				if(istype(tool, /obj/item/wrench))
+					tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] loosens the nuts holding [holder.name]'s [src.name] to their stump.</span>", "<span style=\"color:red\">You loosen the nuts holding [holder.name]'s [src.name] to their stump.</span>")
+				else
+					tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] tightens the screws around [holder.name]'s [src.name].</span>", "<span style=\"color:red\">You tighten the screws around [holder.name]'s [src.name].</span>")
+			if(3)
+				tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] loosens the screws around [holder.name]'s [src.name], causing it to fall to the floor.</span>", "<span style=\"color:red\">You loosen the screws around [holder.name]'s [src.name], causing it to fall to the floor.</span>")
+				logTheThing("combat", tool.the_mob, holder, "removes %target%'s [src.name]")
+				logTheThing("diary", tool.the_mob, holder, "removes %target%'s [src.name]", "combat")
+				src.remove(0)
+
+		return 1
+
+/obj/item/parts/human_parts/arm/prostheses/left/rocket
+	name = "left rocket prosthesis"
+	desc = "A high-tech prosthesis. It's even got a built-in lighter... but it's out of lighter fluid. Looks like you need something to attach it to."
 	icon_state = "arm_left_rocket"
 	slot= "l_arm"
 	side = "left"
 	decomp_affected = 0
 	skintoned = 0
-	limb_type = /datum/limb/rocket
 	handlistPart = "l_hand_rocket"
 
 	New(var/atom/holder)
@@ -771,15 +870,25 @@
 		src.standImage = image('icons/mob/human.dmi', "[src.slot]_rocket")
 		return standImage
 
-/obj/item/parts/human_parts/arm/right/rocket
-	name = "right rocket arm"
-	desc = "A high-tech prosthesis. It's even got a built-in lighter... but it's out of lighter fluid."
+//	surgery(var/obj/item/tool) this is making wrench_surgery and screw_surgery not return 1 no matter how i phrase it
+//		if(remove_stage == 1 && istype(tool, /obj/item/wrench))
+//			remove_stage = 0
+//			holder.give_rocketarm(1,0)
+//			playsound(get_turf(src), "sound/items/Ratchet.ogg", 40, 1)
+//			tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] wrenches [holder.name]'s [src.name] securely to their stump.</span>", "<span style=\"color:red\">You wrench [holder.name]'s [src.name] securely to their stump.</span>")
+//			logTheThing("combat", tool.the_mob, holder, "wrenches %target%'s [src.name] back on")
+//			logTheThing("diary", tool.the_mob, holder, "wrenches %target%'s [src.name] back on", "combat")
+//		else
+//			..()
+
+/obj/item/parts/human_parts/arm/prostheses/right/rocket
+	name = "right rocket prosthesis"
+	desc = "A high-tech prosthesis. It's even got a built-in lighter... but it's out of lighter fluid. Looks like you need something to attach it to."
 	icon_state = "arm_right_rocket"
 	slot= "r_arm"
 	side = "right"
 	decomp_affected = 0
 	skintoned = 0
-	limb_type = /datum/limb/rocket
 	handlistPart = "r_hand_rocket"
 
 	New(var/atom/holder)
@@ -812,7 +921,7 @@
 	ks_ratio = 0.1
 
 	on_hit(atom/hit, angle, var/obj/projectile/O)
-		var /obj/item/parts/human_parts/arm/left/rocket/my_rocket = new(last_nonwall)
+		var /obj/item/parts/human_parts/arm/prostheses/left/rocket/my_rocket = new(last_nonwall)
 		my_rocket.dir = O.dir
 
 /datum/projectile/rocketarm/rocketarm_right
@@ -826,5 +935,5 @@
 	ks_ratio = 0.1
 
 	on_hit(atom/hit, angle, var/obj/projectile/O)
-		var /obj/item/parts/human_parts/arm/right/rocket/my_rocket = new(last_nonwall)
+		var /obj/item/parts/human_parts/arm/prostheses/right/rocket/my_rocket = new(last_nonwall)
 		my_rocket.dir = O.dir
