@@ -68,7 +68,7 @@
 
 		return
 /*
-	proc/set_skin_tone()
+	proc
 		skin_tone = holder.bioHolder.mobAppearance.s_tone
 		var/icon/newicon = icon(src.icon, src.icon_state)
 		if(skin_tone >= 0) newicon.Blend(rgb(skin_tone, skin_tone, skin_tone), ICON_ADD)
@@ -754,8 +754,7 @@
 	slot = "l_arm"
 	side = "left"
 	decomp_affected = 0
-	skintoned = 0
-	can_hold_items = 0
+	skintoned = 1
 	override_attack_hand = 1
 	handlistPart = "blank"
 
@@ -778,8 +777,7 @@
 	slot = "r_arm"
 	side = "right"
 	decomp_affected = 0
-	skintoned = 0
-	can_hold_items = 0
+	skintoned = 1
 	override_attack_hand = 1
 	handlistPart = "blank"
 
@@ -796,6 +794,20 @@
 		return standImage
 
 /obj/item/parts/human_parts/arm/prostheses
+	remove(var/show_message = 1)
+		var/roboside = null
+		var/mob/living/carbon/human/H = holder
+		if(src.slot == "l_arm")
+			roboside = "left"
+		if(src.slot == "r_arm")
+			roboside = "right"
+		..()
+		if(roboside == "left")
+			H.limbs.l_arm = new/obj/item/parts/human_parts/arm/left/robostump
+		else if(roboside == "right")
+			H.limbs.r_arm = new/obj/item/parts/human_parts/arm/right/robostump //i hope she made lotsa spaghetti
+		return
+
 	attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 		if(!ismob(M) || !ishuman(M))
 			return..()
@@ -808,25 +820,14 @@
 				..()
 
 	surgery(var/obj/item/tool)
-		if(remove_stage == 1 && istype(tool, /obj/item/wrench))
+		if(remove_stage > 1 && istype(tool, /obj/item/wrench))
 			remove_stage = 0
 			playsound(get_turf(src), "sound/items/Ratchet.ogg", 40, 1)
 
 		else if(remove_stage == 0)
 			if(istype(tool, /obj/item/wrench))
-				remove_stage ++
-			else
-				return 0
-
-		else if(remove_stage == 1)
-			if(istype(tool, /obj/item/screwdriver))
 				remove_stage = 3
-			else
-				return 0
-
-		else if(remove_stage == 2)
-			if(istype(tool, /obj/item/screwdriver))
-				remove_stage --
+				playsound(get_turf(src), "sound/items/Ratchet.ogg", 40, 1)
 			else
 				return 0
 
@@ -835,11 +836,6 @@
 				tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] wrenches [holder.name]'s [src.name] securely to their stump.</span>", "<span style=\"color:red\">You wrench [holder.name]'s [src.name] securely to their stump.</span>")
 				logTheThing("combat", tool.the_mob, holder, "wrenches %target%'s [src.name] back on")
 				logTheThing("diary", tool.the_mob, holder, "wrenches %target%'s [src.name] back on", "combat")
-			if(1)
-				if(istype(tool, /obj/item/wrench))
-					tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] loosens the nuts holding [holder.name]'s [src.name] to their stump.</span>", "<span style=\"color:red\">You loosen the nuts holding [holder.name]'s [src.name] to their stump.</span>")
-				else
-					tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] tightens the screws around [holder.name]'s [src.name].</span>", "<span style=\"color:red\">You tighten the screws around [holder.name]'s [src.name].</span>")
 			if(3)
 				tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] loosens the screws around [holder.name]'s [src.name], causing it to fall to the floor.</span>", "<span style=\"color:red\">You loosen the screws around [holder.name]'s [src.name], causing it to fall to the floor.</span>")
 				logTheThing("combat", tool.the_mob, holder, "removes %target%'s [src.name]")
