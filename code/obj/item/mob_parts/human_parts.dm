@@ -866,17 +866,6 @@
 		src.standImage = image('icons/mob/human.dmi', "[src.slot]_rocket")
 		return standImage
 
-//	surgery(var/obj/item/tool) this is making wrench_surgery and screw_surgery not return 1 no matter how i phrase it
-//		if(remove_stage == 1 && istype(tool, /obj/item/wrench))
-//			remove_stage = 0
-//			holder.give_rocketarm(1,0)
-//			playsound(get_turf(src), "sound/items/Ratchet.ogg", 40, 1)
-//			tool.the_mob.visible_message("<span style=\"color:red\">[tool.the_mob] wrenches [holder.name]'s [src.name] securely to their stump.</span>", "<span style=\"color:red\">You wrench [holder.name]'s [src.name] securely to their stump.</span>")
-//			logTheThing("combat", tool.the_mob, holder, "wrenches %target%'s [src.name] back on")
-//			logTheThing("diary", tool.the_mob, holder, "wrenches %target%'s [src.name] back on", "combat")
-//		else
-//			..()
-
 /obj/item/parts/human_parts/arm/prostheses/right/rocket
 	name = "right rocket prosthesis"
 	desc = "A high-tech prosthesis. It's even got a built-in lighter... but it's out of lighter fluid. Looks like you need something to attach it to."

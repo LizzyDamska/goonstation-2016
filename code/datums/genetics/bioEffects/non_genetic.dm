@@ -188,7 +188,8 @@
 ////////////////
 // Rocket Arm //
 ///////////////
-/mob/proc/give_rocketarm(var/arm_check = 0, var/remove_powers = 0)
+//dont look at me i dont know how to do abilities ok
+/*/mob/proc/give_rocketarm(var/arm_check = 0, var/remove_powers = 0)
 	if(ishuman(src))
 		var/mob/living/carbon/human/dingus = src
 		if(remove_powers == 1)
@@ -215,7 +216,7 @@
 	usesPoints = 0
 	regenRate = 0
 	tabName = "Roboman"
-
+im pretty sure these dont even work oh god help
 /datum/targetable/organAbility/rocketpunch/rocketpunch_l
 	name = "Rocket Punch"
 	desc = "Lets you punch people from a distance!"
@@ -261,3 +262,4 @@
 				holder.owner.give_rocketarm(1, 1)
 			else
 				boutput(usr, "You can't make a fist with something in your hand!")
+this is shit actually
